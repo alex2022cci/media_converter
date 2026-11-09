@@ -1,0 +1,36 @@
+CONVERTISSEUR MÉDIA — FFmpeg
+============================
+
+Fichier principal : convertisseur_media.py
+
+FONCTIONNALITÉS
+- Interface graphique en français (Tkinter).
+- Sélection de plusieurs fichiers ou ajout d'un dossier.
+- Choix du format de sortie : MP4, WebM, WebP animé, GIF animé, MOV, MKV, AVI, MP3, WAV ou FLAC.
+- Réglages de qualité, FPS, largeur maximale et durée pour les animations WebP/GIF.
+- Dossier de sortie, journal et progression des conversions.
+- Conversion en série via FFmpeg.
+
+PRÉREQUIS
+1. Python 3.10 ou plus récent.
+2. FFmpeg installé, avec ffmpeg et ffprobe accessibles dans le PATH.
+   Téléchargement : https://ffmpeg.org/download.html
+
+LANCEMENT
+Windows :
+    python convertisseur_media.py
+
+macOS / Linux :
+    python3 convertisseur_media.py
+
+AUCUNE DÉPENDANCE PYTHON EXTERNE
+L'interface utilise Tkinter, normalement fourni avec Python. Sur certaines distributions Linux,
+Tkinter peut devoir être installé séparément (par exemple le paquet python3-tk).
+
+NOTES
+- Le programme ne garantit pas une taille finale précise : le poids dépend du contenu source,
+  de la durée, de la résolution, du mouvement et des réglages de qualité.
+- Pour WebP animé, commence par qualité 90, 24 FPS et résolution d'origine.
+  Si le fichier est trop lourd, baisse la qualité à 85/80, puis les FPS ou la largeur.
+- Les codecs disponibles dépendent de la version et de la compilation de FFmpeg.
+- Les fichiers existants ne sont pas écrasés par défaut.
